@@ -148,17 +148,3 @@ INSERT INTO attendances (person_id, movie_id) VALUES (10, 2);
 INSERT INTO attendances (person_id, movie_id) VALUES (14, 16);
 INSERT INTO attendances (person_id, movie_id) VALUES (14, 15);
 INSERT INTO attendances (person_id, movie_id) VALUES (3, 9);
-
-
-
--- UPDATE movies
--- SET start_time = 00:00
--- WHERE name = 'Guardians of the Galaxy 2';
-
-UPDATE movies
-SET show_time = '21:30'
-WHERE title = 'Guardians of the Galaxy';
-
-SELECT * FROM movies;
-
--- SELECT * FROM people WHERE people.name = 'Fraser Brown';

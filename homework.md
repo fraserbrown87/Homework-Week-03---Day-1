@@ -36,6 +36,10 @@ UPDATE people
 SET name = 'Ian Henderson'
 WHERE name = 'Iain Henderson';
 
+UPDATE people
+SET name = 'Ian Henderson'
+WHERE id = 10;
+
 4. Return ONLY your name from the 'people' table.
 
 SELECT * FROM people WHERE people.name = 'Fraser Brown';
@@ -54,6 +58,10 @@ DELETE FROM people WHERE name = 'Craig Morton';
 
 8. Somehow the list of people includes two people named 'Andrew'. Change these entries to the proper names ('Jeff 4', 'Jeff 5')
 
+UPDATE people SET name = 'Jeff 4' WHERE id = 21;
+
+UPDATE people SET name = 'Jeff 5' WHERE id = 22;
+
 9. The cinema has just heard that they will be holding an exclusive midnight showing of 'Guardians of the Galaxy 2'!! Create a new entry in the 'movies' table to reflect this.
 
 INSERT INTO movies (title, year, show_time)
@@ -68,3 +76,16 @@ WHERE title = 'Guardians of the Galaxy';
 ## Research
 
 1. Research how to delete multiple entries from your table in a single command.
+
+DELETE FROM movies WHERE id in (21,22,33);
+
+DELETE FROM movies WHERE id BETWEEN (21,33);
+
+DELETE FROM movies WHERE title in ('Ant-Man', 'Iron Man 3')
+
+DELETE FROM movies WHERE year < 2014 or year > 2017;
+
+SELECT * FROM movies WHERE title LIKE %the%
+
+SELECT * FROM movies WHERE lower(title) LIKE %guardians%
+<!-- (Wild Card, deletes everything with 'the' in the title) -->
